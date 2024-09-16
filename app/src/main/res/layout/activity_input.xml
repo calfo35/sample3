@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.InputActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:headerBackground="@color/design_default_color_primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarInput" />
+
+    <EditText
+        android:id="@+id/editAlarmText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/alarm_name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/time_picker" />
+
+    <!-- 朝活の種類設定のテキスト -->
+
+    <!-- 朝活選択スピナー -->
+    <TextView
+        android:id="@+id/activity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingTop="16dp"
+        android:text="何の朝活をしますか？"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editAlarmText" />
+
+    <Spinner
+        android:id="@+id/activity_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/activity_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:entries="@array/activity_array" />
+
+    <!-- 勉強時間設定のテキスト -->
+    <TextView
+        android:id="@+id/studytime_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="勉強時間を設定してください (分)"
+        app:layout_constraintTop_toBottomOf="@+id/activity_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="16dp"
+        android:textSize="16sp"/>
+
+    <!-- 勉強時間設定のシークバー -->
+    <SeekBar
+        android:id="@+id/time_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="60"
+        android:min="5"
+        app:layout_constraintTop_toBottomOf="@+id/studytime_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- シークバーの勉強時間を表示するテキスト -->
+    <TextView
+        android:id="@+id/time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 分"
+        app:layout_constraintTop_toBottomOf="@+id/time_seekbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="8dp"
+        android:textSize="16sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
