@@ -215,6 +215,8 @@ public class InputActivity extends AppCompatActivity {
                         listItem.setAlarmID(requestCode);
                         listItem.setAlarmName(alarmName);
                         listItem.setTime(alarmTime);
+                        listItem.setActivityType(activityType);
+                        listItem.setStudyTime(studyTime);
                         Util.setAlarm(InputActivity.this, listItem);
 
                         Toast.makeText(InputActivity.this, R.string.alarm_save_msg, Toast.LENGTH_SHORT).show();

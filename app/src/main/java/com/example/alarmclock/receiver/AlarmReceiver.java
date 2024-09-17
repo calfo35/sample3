@@ -20,6 +20,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 
         Log.d("alarmclockdd","receive alarm");
 
+
+        int geg = intent.getIntExtra("studytime", -1);
+        Log.d("alarmclockdd", "studytime"+String.valueOf(geg));
+
         // アラームを再登録
         // 参考 PutExtraは使用できない
         // https://stackoverflow.com/questions/12506391/retrieve-requestcode-from-alarm-broadcastreceiver

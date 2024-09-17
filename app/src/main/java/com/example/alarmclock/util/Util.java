@@ -65,6 +65,8 @@ public class Util {
 
         AlarmManager alarmMgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(context, AlarmReceiver.class);
+
+        intent.putExtra("studytime", item.getStudyTime());
         intent.setData(Uri.parse(String.valueOf(item.getAlarmID())));
         PendingIntent alarmIntent = PendingIntent.getBroadcast(context, item.getAlarmID(), intent, PendingIntent.FLAG_MUTABLE);
 
